@@ -1,0 +1,62 @@
+{
+  "mode": "before",
+  "method": "React component integration; jsdom and synthetic fetch; no live account, browser navigation, server or DB.",
+  "results": [
+    {
+      "scenario": "old-200-after-save",
+      "passed": true
+    },
+    {
+      "scenario": "old-401-after-save",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ undefined\n- '저장된 최신 팀'\n"
+    },
+    {
+      "scenario": "old-403-after-save",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ undefined\n- '저장된 최신 팀'\n"
+    },
+    {
+      "scenario": "old-403-during-save",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\nfalse !== true\n"
+    },
+    {
+      "scenario": "same-revision-permission-and-pending-count",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\ntrue !== false\n"
+    },
+    {
+      "scenario": "latest-access-denial-clears-room",
+      "passed": true
+    },
+    {
+      "scenario": "logout-stops-room-and-late-success",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\ntrue !== false\n"
+    },
+    {
+      "scenario": "failed-logout-keeps-session",
+      "passed": true
+    },
+    {
+      "scenario": "hub-logout-stops-automatic-reads",
+      "passed": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ {\n+   'GET /api/account': 3,\n+   'GET /api/workspace': 3\n+ }\n- {}\n"
+    },
+    {
+      "scenario": "logout-during-home-bootstrap",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\ntrue !== false\n"
+    },
+    {
+      "scenario": "team-navigation-a-b-a-cleans-old-reads",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ undefined\n- true\n"
+    },
+    {
+      "scenario": "strict-mode-bootstrap-remains-functional",
+      "passed": true
+    }
+  ]
+}

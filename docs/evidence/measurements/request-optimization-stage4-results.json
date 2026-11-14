@@ -1,0 +1,70 @@
+{
+  "mode": "after",
+  "method": "React component integration; jsdom and synthetic fetch; no live account, browser navigation, server or DB.",
+  "results": [
+    {
+      "scenario": "old-200-after-save",
+      "passed": true
+    },
+    {
+      "scenario": "old-401-after-save",
+      "passed": true
+    },
+    {
+      "scenario": "old-403-after-save",
+      "passed": true
+    },
+    {
+      "scenario": "old-403-during-save",
+      "passed": true
+    },
+    {
+      "scenario": "same-revision-permission-and-pending-count",
+      "passed": true
+    },
+    {
+      "scenario": "latest-access-denial-clears-room",
+      "passed": true
+    },
+    {
+      "scenario": "logout-stops-room-and-late-success",
+      "passed": true
+    },
+    {
+      "scenario": "failed-logout-keeps-session",
+      "passed": true
+    },
+    {
+      "scenario": "hub-logout-stops-automatic-reads",
+      "passed": true
+    },
+    {
+      "scenario": "logout-during-home-bootstrap",
+      "passed": true
+    },
+    {
+      "scenario": "team-navigation-a-b-a-cleans-old-reads",
+      "passed": true
+    },
+    {
+      "scenario": "strict-mode-bootstrap-remains-functional",
+      "passed": true
+    },
+    {
+      "scenario": "logout-pending-ignores-old-403",
+      "passed": true
+    },
+    {
+      "scenario": "team-navigation-discards-old-mutation",
+      "passed": true
+    },
+    {
+      "scenario": "bootstrap-a-b-late-session-is-discarded",
+      "passed": true
+    },
+    {
+      "scenario": "anonymous-hub-recovers-after-login-elsewhere",
+      "passed": true
+    }
+  ]
+}

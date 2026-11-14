@@ -1,0 +1,666 @@
+{
+  "baselineCommit": "f5e191bf3fbaa71eddc3f0abe093228d8da0f08d",
+  "adaptivePolling": {
+    "method": "Real React components; synthetic accounts, responses and virtual time. No network, SSR, assets, production DB, or actual multi-account browser verification.",
+    "results": [
+      {
+        "scenario": "normal-screen-detects-remote-start-then-finish",
+        "passed": true,
+        "requests": {
+          "GET /api/recruitment": 1,
+          "GET /api/room": 4,
+          "GET /api/tournaments": 2
+        },
+        "roomReadTimes": [
+          1792584015000,
+          1792584018000,
+          1792584021000,
+          1792584036000
+        ]
+      },
+      {
+        "scenario": "history-detects-remote-start-within-30s",
+        "passed": true,
+        "requests": {
+          "GET /api/room": 1,
+          "GET /api/tournaments": 2
+        },
+        "roomReadTimes": [
+          1792584066000
+        ]
+      },
+      {
+        "scenario": "live-keeps-3s-on-선수단 관리",
+        "passed": true,
+        "requests": {
+          "GET /api/room": 3
+        },
+        "roomReadTimes": [
+          1792584003000,
+          1792584006000,
+          1792584009000
+        ]
+      },
+      {
+        "scenario": "live-keeps-3s-on-시즌 분석",
+        "passed": true,
+        "requests": {
+          "GET /api/room": 3
+        },
+        "roomReadTimes": [
+          1792584003000,
+          1792584006000,
+          1792584009000
+        ]
+      },
+      {
+        "scenario": "live-keeps-3s-on-설정",
+        "passed": true,
+        "requests": {
+          "GET /api/room": 3
+        },
+        "roomReadTimes": [
+          1792584003000,
+          1792584006000,
+          1792584009000
+        ]
+      },
+      {
+        "scenario": "paused-live-match-keeps-3s",
+        "passed": true,
+        "requests": {
+          "GET /api/room": 3
+        },
+        "roomReadTimes": [
+          1792584003000,
+          1792584006000,
+          1792584009000
+        ]
+      },
+      {
+        "scenario": "local-kickoff-applies-response-and-switches-immediately",
+        "passed": true,
+        "requests": {
+          "GET /api/room": 1,
+          "POST /api/clock": 1
+        },
+        "roomReadTimes": [
+          1792584003000
+        ]
+      },
+      {
+        "scenario": "local-final-whistle-applies-response-and-slows-down",
+        "passed": true,
+        "requests": {
+          "GET /api/room": 1,
+          "POST /api/clock": 1
+        },
+        "roomReadTimes": [
+          1792584015000
+        ]
+      },
+      {
+        "scenario": "hidden-remote-start-refreshes-on-resume-once",
+        "passed": true,
+        "requests": {
+          "GET /api/room": 2
+        },
+        "roomReadTimes": [
+          1792584120000,
+          1792584123000
+        ]
+      },
+      {
+        "scenario": "same-status-response-does-not-postpone-next-poll",
+        "passed": true,
+        "requests": {
+          "GET /api/room": 2,
+          "GET /api/tournaments": 1
+        },
+        "roomReadTimes": [
+          1792584001000,
+          1792584015000
+        ]
+      },
+      {
+        "scenario": "tab-switches-clean-up-obsolete-timers",
+        "passed": true,
+        "requests": {
+          "GET /api/room": 2,
+          "GET /api/tournaments": 4
+        },
+        "roomReadTimes": [
+          1792584090000,
+          1792584120000
+        ]
+      },
+      {
+        "scenario": "normal-save-suppresses-polls-and-displays-response-immediately",
+        "passed": true,
+        "requests": {
+          "GET /api/room": 1,
+          "PUT /api/room": 1
+        },
+        "roomReadTimes": [
+          1792584030000
+        ]
+      },
+      {
+        "scenario": "vote-refreshes-room-immediately-without-waiting-15s",
+        "passed": true,
+        "requests": {
+          "GET /api/recruitment": 1,
+          "GET /api/room": 2,
+          "GET /api/tournaments": 1,
+          "POST /api/recruitment": 1
+        },
+        "roomReadTimes": [
+          1792584000000,
+          1792584015000
+        ]
+      },
+      {
+        "scenario": "failed-read-recovers-on-선수단 관리",
+        "passed": true,
+        "requests": {
+          "GET /api/room": 2
+        },
+        "roomReadTimes": [
+          1792584015000,
+          1792584030000
+        ]
+      },
+      {
+        "scenario": "failed-read-recovers-on-시즌 분석",
+        "passed": true,
+        "requests": {
+          "GET /api/room": 2,
+          "GET /api/tournaments": 4
+        },
+        "roomReadTimes": [
+          1792584030000,
+          1792584060000
+        ]
+      },
+      {
+        "scenario": "history-hung-read-times-out-and-retries",
+        "passed": true,
+        "requests": {
+          "GET /api/room": 2,
+          "GET /api/tournaments": 4
+        },
+        "roomReadTimes": [
+          1792584030000,
+          1792584060000
+        ]
+      }
+    ]
+  },
+  "requestRegression": {
+    "expectation": "stage5",
+    "method": "Original components mounted in React without StrictMode; jsdom; fake browser time; synthetic fetch only. Excludes network, SSR, assets, DB and layout.",
+    "versions": {
+      "node": "v24.21.0",
+      "react": "19.2.6",
+      "esbuild": "0.28.0",
+      "jsdom": "30.1.3",
+      "fakeTimers": "15.4.0"
+    },
+    "results": [
+      {
+        "scenario": "hub",
+        "initial": {
+          "GET /api/account": 1,
+          "GET /api/auth/config": 1,
+          "GET /api/workspace": 1
+        },
+        "steady60Seconds": {
+          "GET /api/account": 4,
+          "GET /api/workspace": 4
+        },
+        "hidden60Seconds": {},
+        "resumeVisibilityAndFocus": {
+          "GET /api/account": 1,
+          "GET /api/workspace": 1
+        }
+      },
+      {
+        "scenario": "home",
+        "initial": {
+          "GET /api/account": 2,
+          "GET /api/auth/config": 2,
+          "GET /api/auth/session": 1,
+          "GET /api/recruitment": 1,
+          "GET /api/room": 1,
+          "GET /api/tournaments": 1,
+          "GET /api/workspace": 1
+        },
+        "steady60Seconds": {
+          "GET /api/room": 4,
+          "GET /api/tournaments": 4
+        },
+        "hidden60Seconds": {},
+        "resumeVisibilityAndFocus": {
+          "GET /api/room": 1
+        }
+      },
+      {
+        "scenario": "home-선수단 관리",
+        "initial": {
+          "GET /api/account": 2,
+          "GET /api/auth/config": 2,
+          "GET /api/auth/session": 1,
+          "GET /api/recruitment": 1,
+          "GET /api/room": 1,
+          "GET /api/tournaments": 1,
+          "GET /api/workspace": 1
+        },
+        "steady60Seconds": {
+          "GET /api/room": 4
+        },
+        "hidden60Seconds": {},
+        "resumeVisibilityAndFocus": {
+          "GET /api/room": 1
+        }
+      },
+      {
+        "scenario": "home-시즌 분석",
+        "initial": {
+          "GET /api/account": 2,
+          "GET /api/auth/config": 2,
+          "GET /api/auth/session": 1,
+          "GET /api/recruitment": 1,
+          "GET /api/room": 1,
+          "GET /api/tournaments": 2,
+          "GET /api/workspace": 1,
+          "POST /api/telemetry": 1
+        },
+        "steady60Seconds": {
+          "GET /api/room": 2,
+          "GET /api/tournaments": 4
+        },
+        "hidden60Seconds": {},
+        "resumeVisibilityAndFocus": {
+          "GET /api/room": 1
+        }
+      },
+      {
+        "scenario": "home-live",
+        "initial": {
+          "GET /api/account": 2,
+          "GET /api/auth/config": 2,
+          "GET /api/auth/session": 1,
+          "GET /api/recruitment": 1,
+          "GET /api/room": 1,
+          "GET /api/tournaments": 1,
+          "GET /api/workspace": 1
+        },
+        "steady60Seconds": {
+          "GET /api/room": 20,
+          "GET /api/tournaments": 4
+        },
+        "hidden60Seconds": {},
+        "resumeVisibilityAndFocus": {
+          "GET /api/room": 1
+        }
+      },
+      {
+        "scenario": "home-live-lineup",
+        "initial": {
+          "GET /api/account": 2,
+          "GET /api/auth/config": 2,
+          "GET /api/auth/session": 1,
+          "GET /api/recruitment": 1,
+          "GET /api/room": 1,
+          "GET /api/tournaments": 1,
+          "GET /api/workspace": 1
+        },
+        "steady60Seconds": {
+          "GET /api/room": 20
+        },
+        "hidden60Seconds": {},
+        "resumeVisibilityAndFocus": {
+          "GET /api/room": 1
+        }
+      },
+      {
+        "scenario": "tournament",
+        "initial": {
+          "GET /api/tournaments": 1
+        },
+        "steady60Seconds": {
+          "GET /api/tournaments": 12
+        },
+        "hidden60Seconds": {},
+        "resumeVisibilityAndFocus": {}
+      },
+      {
+        "scenario": "tournamentHub",
+        "initial": {
+          "GET /api/tournaments": 1,
+          "GET /api/workspace": 1
+        },
+        "steady60Seconds": {},
+        "hidden60Seconds": {},
+        "resumeVisibilityAndFocus": {}
+      },
+      {
+        "scenario": "home-slow-4500ms",
+        "roomRequests": 2,
+        "maxConcurrentRequests": 1,
+        "timeline": [
+          {
+            "at": 1792584003000,
+            "method": "GET",
+            "path": "/api/room",
+            "query": "?code=MEASUREA",
+            "activeAtStart": 1,
+            "finishedAt": 1792584007500,
+            "status": 200
+          },
+          {
+            "at": 1792584009000,
+            "method": "GET",
+            "path": "/api/room",
+            "query": "?code=MEASUREA",
+            "activeAtStart": 1,
+            "finishedAt": 1792584013500,
+            "status": 200
+          }
+        ]
+      },
+      {
+        "scenario": "home-errors-15s",
+        "counts": {
+          "GET /api/room": 5,
+          "GET /api/tournaments": 1
+        },
+        "roomRequestOffsets": [
+          0,
+          3000,
+          6000,
+          9000,
+          12000
+        ]
+      },
+      {
+        "scenario": "home-get-before-save",
+        "timeline": [
+          {
+            "at": 1792584003000,
+            "method": "GET",
+            "path": "/api/room",
+            "query": "?code=MEASUREA",
+            "activeAtStart": 1,
+            "aborted": true,
+            "finishedAt": 1792584003000
+          },
+          {
+            "at": 1792584003000,
+            "method": "PUT",
+            "path": "/api/room",
+            "query": "",
+            "activeAtStart": 1,
+            "finishedAt": 1792584004000,
+            "status": 200
+          },
+          {
+            "at": 1792584006000,
+            "method": "GET",
+            "path": "/api/room",
+            "query": "?code=MEASUREA",
+            "activeAtStart": 1,
+            "aborted": true,
+            "finishedAt": 1792584008000
+          }
+        ],
+        "serverRevision": 2,
+        "savedNameStillDisplayed": true,
+        "saveModalClosed": true
+      },
+      {
+        "scenario": "home-save-in-flight-6s",
+        "counts": {
+          "PUT /api/room": 1
+        },
+        "pollSuppressionPreserved": true
+      },
+      {
+        "scenario": "home-timer-and-resume-same-time",
+        "counts": {
+          "GET /api/room": 1
+        }
+      },
+      {
+        "scenario": "hub-timer-and-resume-same-time",
+        "counts": {
+          "GET /api/account": 1,
+          "GET /api/workspace": 1
+        }
+      },
+      {
+        "scenario": "hub-slow-20s",
+        "counts": {
+          "GET /api/account": 2,
+          "GET /api/workspace": 2
+        },
+        "maxConcurrentRequests": 2
+      },
+      {
+        "scenario": "home-forced-conflict-refresh",
+        "timeline": [
+          {
+            "at": 1792584003000,
+            "method": "GET",
+            "path": "/api/room",
+            "query": "?code=MEASUREA",
+            "activeAtStart": 1,
+            "aborted": true,
+            "finishedAt": 1792584003000
+          },
+          {
+            "at": 1792584003000,
+            "method": "PUT",
+            "path": "/api/room",
+            "query": "",
+            "activeAtStart": 1,
+            "finishedAt": 1792584003000,
+            "status": 409
+          },
+          {
+            "at": 1792584003000,
+            "method": "GET",
+            "path": "/api/room",
+            "query": "?code=MEASUREA",
+            "activeAtStart": 1,
+            "finishedAt": 1792584003100,
+            "status": 200
+          },
+          {
+            "at": 1792584006000,
+            "method": "GET",
+            "path": "/api/room",
+            "query": "?code=MEASUREA",
+            "activeAtStart": 1,
+            "finishedAt": 1792584006100,
+            "status": 200
+          }
+        ],
+        "newSnapshotPreserved": true
+      },
+      {
+        "scenario": "hub-mutation-invalidates-old-account",
+        "counts": {
+          "GET /api/account": 1,
+          "GET /api/workspace": 1,
+          "PATCH /api/account": 1
+        },
+        "newNicknamePreserved": true
+      },
+      {
+        "scenario": "home-timeout-retries",
+        "roomRequests": 3,
+        "maxConcurrentRoomRequests": 1,
+        "retryAfterTimeout": true
+      },
+      {
+        "scenario": "hub-partial-failure-cleans-up",
+        "counts": {
+          "GET /api/account": 2,
+          "GET /api/workspace": 2
+        },
+        "unfinishedWorkspaceReadsAborted": true
+      },
+      {
+        "scenario": "home-success-after-timeout",
+        "roomRequests": 3,
+        "normalResponsesResume": true,
+        "timeoutMessageCleared": true
+      }
+    ]
+  },
+  "raceRegression": {
+    "scheduled": {
+      "mode": "after",
+      "roomPollMs": 15000,
+      "method": "React component integration; jsdom and synthetic fetch; no live account, browser navigation, server or DB.",
+      "results": [
+        {
+          "scenario": "old-200-after-save",
+          "passed": true
+        },
+        {
+          "scenario": "old-401-after-save",
+          "passed": true
+        },
+        {
+          "scenario": "old-403-after-save",
+          "passed": true
+        },
+        {
+          "scenario": "old-403-during-save",
+          "passed": true
+        },
+        {
+          "scenario": "same-revision-permission-and-pending-count",
+          "passed": true
+        },
+        {
+          "scenario": "latest-access-denial-clears-room",
+          "passed": true
+        },
+        {
+          "scenario": "logout-stops-room-and-late-success",
+          "passed": true
+        },
+        {
+          "scenario": "failed-logout-keeps-session",
+          "passed": true
+        },
+        {
+          "scenario": "hub-logout-stops-automatic-reads",
+          "passed": true
+        },
+        {
+          "scenario": "logout-during-home-bootstrap",
+          "passed": true
+        },
+        {
+          "scenario": "team-navigation-a-b-a-cleans-old-reads",
+          "passed": true
+        },
+        {
+          "scenario": "strict-mode-bootstrap-remains-functional",
+          "passed": true
+        },
+        {
+          "scenario": "logout-pending-ignores-old-403",
+          "passed": true
+        },
+        {
+          "scenario": "team-navigation-discards-old-mutation",
+          "passed": true
+        },
+        {
+          "scenario": "bootstrap-a-b-late-session-is-discarded",
+          "passed": true
+        },
+        {
+          "scenario": "anonymous-hub-recovers-after-login-elsewhere",
+          "passed": true
+        }
+      ]
+    },
+    "live": {
+      "mode": "after",
+      "roomPollMs": 3000,
+      "method": "React component integration; jsdom and synthetic fetch; no live account, browser navigation, server or DB.",
+      "results": [
+        {
+          "scenario": "old-200-after-save",
+          "passed": true
+        },
+        {
+          "scenario": "old-401-after-save",
+          "passed": true
+        },
+        {
+          "scenario": "old-403-after-save",
+          "passed": true
+        },
+        {
+          "scenario": "old-403-during-save",
+          "passed": true
+        },
+        {
+          "scenario": "same-revision-permission-and-pending-count",
+          "passed": true
+        },
+        {
+          "scenario": "latest-access-denial-clears-room",
+          "passed": true
+        },
+        {
+          "scenario": "logout-stops-room-and-late-success",
+          "passed": true
+        },
+        {
+          "scenario": "failed-logout-keeps-session",
+          "passed": true
+        },
+        {
+          "scenario": "hub-logout-stops-automatic-reads",
+          "passed": true
+        },
+        {
+          "scenario": "logout-during-home-bootstrap",
+          "passed": true
+        },
+        {
+          "scenario": "team-navigation-a-b-a-cleans-old-reads",
+          "passed": true
+        },
+        {
+          "scenario": "strict-mode-bootstrap-remains-functional",
+          "passed": true
+        },
+        {
+          "scenario": "logout-pending-ignores-old-403",
+          "passed": true
+        },
+        {
+          "scenario": "team-navigation-discards-old-mutation",
+          "passed": true
+        },
+        {
+          "scenario": "bootstrap-a-b-late-session-is-discarded",
+          "passed": true
+        },
+        {
+          "scenario": "anonymous-hub-recovers-after-login-elsewhere",
+          "passed": true
+        }
+      ]
+    }
+  }
+}
