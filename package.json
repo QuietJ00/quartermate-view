@@ -1,0 +1,20 @@
+{
+  "name": "quartermate-view",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^22.18.0 || >=24"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "node --test src/engine/*.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "typescript": "5.9.3",
+    "vite": "8.3.8"
+  }
+}

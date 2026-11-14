@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="포메이션과 선수 참석 여부로 쿼터별 축구 라인업을 구성하는 Quartermate 데모">
+    <title>Quartermate View · 쿼터 라인업</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="shell topbar-inner">
+        <a class="wordmark" href="./" aria-label="Quartermate View 홈"><span class="brand-mark" aria-hidden="true">Q</span> Quartermate<span class="view">View</span></a>
+        <a class="source-link" href="https://github.com/QuietJ00/quartermate-view">GitHub ↗</a>
+      </div>
+    </header>
+    <main class="shell">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">축구 경기 플래너</p>
+        <h1 id="page-title">쿼터별 라인업</h1>
+        <p class="description">포메이션과 참석 명단을 바꾸면 쿼터별 배치와 예상 출전 시간이 자동으로 갱신됩니다.</p>
+      </section>
+
+      <div class="settings" aria-label="경기 설정">
+        <label for="formation">포메이션 <select id="formation"></select></label>
+        <label for="duration">쿼터 길이 <select id="duration">
+          <option value="15">15분</option><option value="20" selected>20분</option><option value="25">25분</option><option value="30">30분</option>
+        </select></label>
+        <button id="reset" type="button">초기화</button>
+      </div>
+      <p id="summary" class="sr-only" role="status"></p>
+      <div class="workspace">
+        <section class="panel board" aria-labelledby="board-title">
+          <div class="panel-heading">
+            <div><p class="eyebrow">매치 보드</p><h2 id="board-title">쿼터 배치</h2></div>
+            <span id="coverage" class="badge"></span>
+          </div>
+          <div id="quarters" class="quarters" role="group" aria-label="표시할 쿼터"></div>
+          <div class="pitch">
+            <div class="pitch-lines" aria-hidden="true"><i class="half"></i><i class="circle"></i><i class="area north"></i><i class="area south"></i></div>
+            <ol id="lineup" class="lineup" aria-label="쿼터 출전 선수"></ol>
+          </div>
+          <p id="bench" class="bench"></p>
+          <p id="warning" class="warning" hidden></p>
+        </section>
+        <section class="panel roster" aria-labelledby="roster-title">
+          <div class="panel-heading">
+            <div><p class="eyebrow">참석과 출전 시간</p><h2 id="roster-title">선수 명단</h2></div>
+            <span id="attendance" class="badge"></span>
+          </div>
+          <p class="roster-help">참석 체크를 변경해 선수 배치를 비교해 보세요.</p>
+          <table>
+            <thead><tr><th scope="col">선수</th><th scope="col">포지션</th><th scope="col">참석</th><th scope="col">예상 출전</th></tr></thead>
+            <tbody id="roster"></tbody>
+          </table>
+        </section>
+      </div>
+      <footer>포트폴리오 데모 · 모든 선수와 경기 정보는 예시입니다.</footer>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
