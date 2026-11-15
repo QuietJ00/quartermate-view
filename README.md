@@ -2,7 +2,7 @@
 
 [![Checks](https://github.com/QuietJ00/quartermate-view/actions/workflows/checks.yml/badge.svg)](https://github.com/QuietJ00/quartermate-view/actions/workflows/checks.yml)
 
-축구 경기의 쿼터별 출전 명단을 자동으로 만드는 Quartermate의 포트폴리오 데모입니다. 사회인 축구팀에서 참석 인원과 선호 포지션을 확인하며 매 쿼터 명단을 다시 짜야 하는 문제에서 출발했습니다.
+축구 경기의 쿼터별 출전 명단을 자동으로 만드는 Quartermate의 포트폴리오 데모입니다. 대학 축구 동아리에서 참석 인원과 선호 포지션을 확인하며 매 쿼터 명단을 다시 짜야 하는 문제에서 출발했습니다.
 
 ![포메이션과 쿼터별 배치가 표시된 축구장, 참석과 예상 출전 시간이 표시된 선수 명단](docs/preview.png)
 
